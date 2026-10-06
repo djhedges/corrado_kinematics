@@ -74,7 +74,8 @@
 
 ## Bump Steer Measurements
 
-**Configuration:** Reseated Outer CV 5mm Spacer
+**Configuration:** Reseated Outer CV 5mm Spacer  
+**Dial Gauge Spacing:** 34 cm (340 mm) between front and rear dial indicators
 
 ### Run 1
 

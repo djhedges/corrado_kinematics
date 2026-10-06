@@ -3,8 +3,8 @@
 # ==============================================================================
 # Hardware Setup & Configuration Notes:
 # - Spindles:           VW Mk2 Spindles (Wheel Bearing Housings)
-# - Lower Ball Joints:  Extended Ball Joints (roll center correction)
-# - Control Arms:       Corrado VR6 "Plus" Lower Control Arms
+# - Lower Ball Joints:  Extended Ball Joints (roll center correction, arms level at Z=0)
+# - Control Arms:       Corrado VR6 "Plus" Lower Control Arms (Z aligned with inner pivot)
 # - Tie Rods:           Rear-steer rack with 5mm spacer at outer tie rod
 # - Strut:              MacPherson Strut (Length: 47.25cm / 472.5mm from upper mount to clamp)
 # - Wheels & Spacers:   15" Wheels, 5mm (0.5cm) Wheel Spacers
@@ -17,6 +17,7 @@
 # Alignment Targets (Design Condition):
 # - Static Caster:      +9.20 deg (both sides)
 # - Static Camber:      -2.60 deg (Left) / -3.00 deg (Right)
+# - Static Toe:         -0.1504 deg (-1mm strings on 15" rim)
 # - Strut Top Span:     113.0 cm (1130.0 mm cross-car distance between strut tops)
 #
 # Coordinate System: ISO 8855
@@ -29,7 +30,7 @@
 type: macpherson
 scope: axle
 name: "corrado_mk2_spindles_vr6_arms_ai_corrected"
-version: "0.1.0"
+version: "0.2.0"
 units: millimeters
 
 vehicle_config:
@@ -56,36 +57,36 @@ hardpoints:
     # Lower control arm (Corrado VR6 Plus arm with extended lower ball joint)
     lower_wishbone_inboard_front: {x: 0.0, y: 307.5, z: 0.0}
     lower_wishbone_inboard_rear: {x: -300.0, y: 340.0, z: 0.0}
-    lower_wishbone_outboard: {x: 19.0, y: 720.5, z: -6.0}
+    lower_wishbone_outboard: {x: 19.0, y: 720.5, z: 0.0}
 
-    # MacPherson Strut (strut_top at y: 56.735cm, x: -8.369cm, z: 62.8cm)
-    strut_top: {x: -83.686, y: 567.346, z: 628.0}
+    # MacPherson Strut (strut_top at y: 56.735cm, x: -8.271cm, z: 62.8cm)
+    strut_top: {x: -82.714, y: 567.346, z: 628.0}
     # Knuckle strut clamp derived on steering axis (47.25cm / 472.5mm from strut_top)
-    strut_bottom: {x: -10.202, y: 676.945, z: 174.300}
+    strut_bottom: {x: -9.268, y: 677.936, z: 174.533}
 
     # Steering rack / tie rod (with 5mm spacer at outer tie rod)
     trackrod_inboard: {x: -145.0, y: 292.5, z: 70.0}
-    trackrod_outboard: {x: -105.0, y: 677.5, z: 44.0}
+    trackrod_outboard: {x: -128.27, y: 678.55, z: 44.33}
 
-    # Spindle / Wheel center (camber: -2.6 deg)
+    # Spindle / Wheel center (camber: -2.6 deg, toe: -0.1504 deg)
     axle_inboard: {x: -6.0, y: 718.7, z: 125.597}
-    axle_outboard: {x: -6.0, y: 868.545, z: 132.403}
+    axle_outboard: {x: -6.393, y: 868.545, z: 132.403}
 
   right:
     # Lower control arm (Corrado VR6 Plus arm with extended lower ball joint)
     lower_wishbone_inboard_front: {x: 0.0, y: -307.5, z: 0.0}
     lower_wishbone_inboard_rear: {x: -300.0, y: -340.0, z: 0.0}
-    lower_wishbone_outboard: {x: 19.0, y: -720.5, z: -6.0}
+    lower_wishbone_outboard: {x: 19.0, y: -720.5, z: 0.0}
 
-    # MacPherson Strut (strut_top at y: -56.265cm, x: -8.369cm, z: 62.8cm)
-    strut_top: {x: -83.686, y: -562.654, z: 628.0}
+    # MacPherson Strut (strut_top at y: -56.265cm, x: -8.271cm, z: 62.8cm)
+    strut_top: {x: -82.714, y: -562.654, z: 628.0}
     # Knuckle strut clamp derived on steering axis (47.25cm / 472.5mm from strut_top)
-    strut_bottom: {x: -10.325, y: -675.423, z: 175.057}
+    strut_bottom: {x: -9.393, y: -676.438, z: 175.304}
 
     # Steering rack / tie rod (with 5mm spacer at outer tie rod)
     trackrod_inboard: {x: -145.0, y: -292.5, z: 70.0}
-    trackrod_outboard: {x: -105.0, y: -677.5, z: 44.0}
+    trackrod_outboard: {x: -128.27, y: -678.55, z: 44.33}
 
-    # Spindle / Wheel center (camber: -3.0 deg)
+    # Spindle / Wheel center (camber: -3.0 deg, toe: -0.1504 deg)
     axle_inboard: {x: -6.0, y: -718.7, z: 125.075}
-    axle_outboard: {x: -6.0, y: -868.494, z: 132.925}
+    axle_outboard: {x: -6.393, y: -868.494, z: 132.925}
