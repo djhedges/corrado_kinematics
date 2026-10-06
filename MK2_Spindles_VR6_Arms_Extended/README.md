@@ -4,6 +4,7 @@
 - **Spindles / Uprights**: VW Mk2 Spindles (Wheel Bearing Housings)
 - **Lower Ball Joints**: Extended Ball Joints (Roll Center Correction)
 - **Control Arms**: Corrado VR6 "Plus" Lower Control Arms
+- **Strut / Damper**: MacPherson Strut (Length: 47.25 cm / 472.5 mm from upper mount to lower clamp)
 - **Outer Tie Rod**: 5mm Bump Steer Spacer
 - **Wheels & Tires**: 15" Wheels, 5mm Wheel Spacers, 240mm Hoosier Slicks MS
 - **Track Width**: 68.4 inches (1737.4 mm) -> Half-track: 868.7 mm
