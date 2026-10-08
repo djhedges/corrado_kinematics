@@ -1,0 +1,60 @@
+# ==============================================================================
+# VW Corrado Front Suspension Geometry (Design Condition Baseline)
+# ==============================================================================
+# Hardware Setup & Configuration Notes:
+# - Spindles:           VW Corrado OEM Spindles (Wheel Bearing Housings)
+# - Lower Ball Joints:  OEM Ball Joints
+# - Control Arms:       Corrado VR6 "Plus" Lower Control Arms
+# - Tie Rods:           Rear-steer rack
+# - Strut:              MacPherson Strut (Length: 47.25cm / 472.5mm from upper mount to clamp)
+# - Wheels & Spacers:   15" Wheels, 5mm (0.5cm) Wheel Spacers
+# - Tires:              240mm Hoosier Slicks MS (Static Hub Height: 11.5" / 292.1mm)
+# - Track Width:        67.13 inches (1705.0mm) -> Half-track: 852.5mm
+# - Wheelbase:          97.2 inches (2468.9mm)
+# - Measured CG:        35.4" (899.2mm) behind front axle, 18.3" (464.8mm) above ground
+# - Total Weight:       2,516 lbs (63.6% Front / 36.4% Rear, 49.7% Left / 50.3% Right)
+#
+# Coordinate System: ISO 8855
+#   +X: Forward (mm)
+#   +Y: Left / Outboard (mm)
+#   +Z: Upward (mm)
+# Reference Datum: Subframe front lower control arm pivot at (0.0, 307.5, 0.0)
+# ==============================================================================
+
+type: macpherson
+side: left
+name: "oem_spindles_vr6_arms"
+version: "0.0.1"
+units: millimeters
+
+hardpoints:
+  # Lower control arm (Corrado VR6 Plus arm with OEM lower ball joint)
+  lower_wishbone_inboard_front: {x: 0.0, y: 307.5, z: 0.0}
+  lower_wishbone_inboard_rear: {x: -300.0, y: 340.0, z: 0.0}
+  lower_wishbone_outboard: {x: 26.0, y: 620.5, z: 9.0}
+
+  # MacPherson Strut (strut_top at y: 56.5cm, x: -9cm, z: 62.8cm relative to front inner)
+  strut_top: {x: -90.0, y: 565.0, z: 628.0}
+  # Knuckle strut clamp derived on steering axis (47.25cm / 472.5mm from strut_top)
+  strut_bottom: {x: -3.305, y: 606.479, z: 165.377}
+
+  # Steering rack / tie rod
+  trackrod_inboard: {x: -145.0, y: 292.5, z: 70.0}
+  trackrod_outboard: {x: -93.0, y: 677.5, z: 78.0}
+
+  # Spindle / Wheel center (half-track: 852.5mm)
+  axle_inboard: {x: -9.0, y: 702.5, z: 115.0}
+  axle_outboard: {x: -9.0, y: 852.5, z: 115.0}
+
+config:
+  steering:
+    type: rack
+  wheel:
+    offset: 0
+    tire:
+      aspect_ratio: 0.423
+      section_width: 240
+      rim_diameter: 15
+  # Measured CG: 35.4" behind front axle, 18.3" off tarmac (Z = 301.7mm relative to front pivot)
+  cg_position: {x: -899.2, y: 0.0, z: 301.7}
+  wheelbase: 2468.9
